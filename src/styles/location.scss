@@ -1,0 +1,130 @@
+@use '_colors' as c;
+@use '_fonts' as f;
+@use '_adaptive' as a;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    .backbutton {
+        display: inline-block;
+        position: absolute;
+        padding: 24px 35px 24px 32px;
+        text-decoration: none;
+        font-family: 'Big Shoulders', Arial, Helvetica, sans-serif;
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: 3.64px;
+        color: c.$white;
+        background-color: c.$almost_black;
+        text-transform: uppercase;
+        left: 56px;
+        @include a.breakpoint(tablet) {
+            left: 96px;
+        }
+        @include a.breakpoint(desktopxl) {
+            left: 156px;
+        }
+        &:hover {
+            background-color: c.$gold;
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -56px;
+            width: 56px;
+            height: 72px;
+            background-color: c.$gold;
+            background-image: url('../../img/left_arrow.svg');
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+}
+
+main {
+    .map {
+        width: 100%;
+    }
+    .location {
+        padding: 48px 16px 56px 16px;
+        background-color: c.$almost_black;
+        @include a.breakpoint(tablet) {
+            display: flex;
+            gap: 100px;
+            padding: 88px 40px 80px 40px;
+        }
+        @include a.breakpoint(desktopxl) {
+            padding: 104px 8% 128px 8%;
+            gap: 40%;
+        }
+        &__header {
+            padding-bottom: 48px;
+            font-family: 'Big Shoulders', Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 50px;
+            line-height: 45px;
+            text-transform: uppercase;
+            color: c.$white;
+        }
+        &__street {
+            padding-bottom: 20px;
+            font-family: 'Big Shoulders', Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 32px;
+            line-height: 32px;
+            text-transform: uppercase;
+            color: c.$gold;
+        }
+        &__town {
+            padding-bottom: 20px;
+            font-family: 'Outfit', Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 28px;
+            color: c.$white;
+        }
+        &__description {
+            font-family: 'Outfit', Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 28px;
+            color: c.$white;
+        }
+    }
+}
+
+footer {
+    padding: 48px 32px;
+    background-color: c.$gold;
+    @include a.breakpoint(tablet) {
+        display: flex;
+        gap: 10%;
+        align-items: start;
+        padding: 56px 40px;
+    }
+    @include a.breakpoint(desktopxl) {
+        padding: 80px 8%;
+        gap: 20%;
+    }
+    .footer_img {
+        padding-bottom: 38px;
+    }
+    .footer_description {
+        font-family: 'Outfit', Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 26px;
+        color: c.$almost_black;
+        padding-bottom: 38px;
+    }
+    .social_networks {
+        display: flex;
+        gap: 20px;
+    }
+}
